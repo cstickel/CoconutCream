@@ -1,0 +1,216 @@
+@import "hallo.css";
+#jfeComposerContextMenu {
+  margin-top: -50px;
+  display: inline-block;
+  position: absolute;
+  height: 36px;
+  position: 'absolute';
+  z-index: 299999;
+  background-image: -webkit-linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-image: -moz-linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-image: -ms-linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-image: -o-linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-image: linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-repeat: repeat-x;
+  padding: 6px 8px 0px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #ccc;
+}
+#jfeComposerContextMenu span {
+  cursor: pointer;
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  background-image: url(../img/baricons.png);
+  margin: 0px 8px;
+}
+.jfeComposerContextMenuDelete {
+  background-position: 0px 0px;
+}
+.jfeComposerContextMenuDelete:hover {
+  background-position: 0px -29px;
+}
+.jfeComposerContextMenuPlay {
+  background-position: -29px 0px;
+}
+.jfeComposerContextMenuPlay:hover {
+  background-position: -29px -29px;
+}
+.jfeComposerContextMenuEdit {
+  background-position: -58px 0px;
+}
+.jfeComposerContextMenuEdit:hover {
+  background-position: -58px -29px;
+}
+.jfeComposerContextMenuPin {
+  background-position: -87px 0px;
+}
+.jfeComposerContextMenuPin:hover {
+  background-position: -87px -29px;
+}
+.jfeComposerContextMenuPinActive {
+  background-position: -116px 0px;
+}
+.jfeComposerContextMenuPinActive:hover {
+  background-position: -116px -29px;
+}
+.jfeComposerContextMenuStar {
+  background-position: -145px 0px;
+}
+.jfeComposerContextMenuStar:hover {
+  background-position: -145px -29px;
+}
+.jfeComposerContextMenuStarActive {
+  background-position: -174px 0px;
+}
+.jfeComposerContextMenuStarActive:hover {
+  background-position: -174px -29px;
+}
+.jfeComposerContextMenuUpload {
+  background-position: -203px 0px;
+}
+.jfeComposerContextMenuUpload:hover {
+  background-position: -203px -29px;
+}
+.jfeComposerContextMenuMovie {
+  background-position: -232px 0px;
+}
+.jfeComposerContextMenuMovie:hover {
+  background-position: -232px -29px;
+}
+.jfeComposerContextMenuMovieActive {
+  background-position: -261px 0px;
+}
+.jfeComposerContextMenuMovieActive:hover {
+  background-position: -261px -29px;
+}
+.jfeComposerContextMenuLink {
+  background-position: -290px 0px;
+}
+.jfeComposerContextMenuLink:hover {
+  background-position: -290px -29px;
+}
+.jfeComposerContextMenuTranslate {
+  background-position: -319px 0px;
+}
+.jfeComposerContextMenuTranslate:hover {
+  background-position: -319px -29px;
+}
+.jfeComposerContextMenuHide {
+  background-position: -348px 0px;
+}
+.jfeComposerContextMenuHide:hover {
+  background-position: -348px -29px;
+}
+.jfeComposerContextMenuShow {
+  background-position: -377px 0px;
+}
+.jfeComposerContextMenuShow:hover {
+  background-position: -377px -29px;
+}
+/* todo : use or remove */
+#barTest {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 0 20px;
+  height: 200px;
+  left: 50%;
+  margin-left: -300px;
+  position: fixed;
+  top: 0;
+  width: 600px;
+  z-index: 9000;
+}
+#jfeComposerOverlay {
+  padding: 20px;
+  z-index: 8001;
+  background-color: #ffffff;
+  position: absolute;
+  left: 50%;
+  box-shadow: 0 0 8px #ccc;
+}
+#jfeComposerOverlay .button {
+  float: right;
+}
+#jfeComposerOverlay .content {
+  min-width: 400px;
+}
+#jfeComposerOverlayDimmer {
+  z-index: 8000;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-color: #ffffff;
+}
+#jfeComposerSelectEditor {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  cursor: pointer;
+  width: 400px;
+}
+#jfeComposerSelectEditor li {
+  padding: 16px;
+}
+#jfeComposerSelectEditor li:last-child {
+  margin: 0px;
+  background-image: none;
+}
+#jfeComposerLinkEditor {
+  width: 260px;
+}
+#jfeComposerLinkEditor select,
+#jfeComposerLinkEditor input[type=text] {
+  width: 250px;
+  margin-bottom: 8px;
+}
+#jfeComposerLinkEditor span.button {
+  padding: 0px;
+}
+span.addContentElement {
+  display: block;
+  cursor: pointer;
+  height: 5px;
+  width: 100%;
+  background-color: #f0f0f0;
+  position: relative;
+  z-index: 100;
+}
+span.addContentElement:before {
+  content: "+";
+  font-weight: bold;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  color: #666666;
+  font-size: 20px;
+  line-height: 35px;
+  text-align: center;
+  height: 0px;
+  box-shadow: 0 0 8px #ccc;
+  border-radius: 6px;
+  background-image: -webkit-linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-image: -moz-linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-image: -ms-linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-image: -o-linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  background-image: linear-gradient(top ,white 30% ,#d7d7d7 100%);
+  -webkit-transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+span.addContentElement:hover:before {
+  height: 30px;
+  -webkit-transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  -ms-transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hidden {
+  opacity: 0.5;
+}

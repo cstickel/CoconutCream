@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>jfeComposer</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript"
+            src="http://jsoncomments.googlecode.com/svn/trunk/jsonComments/js/jquery.jSonComments.js"></script>
+    <script type="text/javascript" src="../vendor/tinymce/jscripts/tiny_mce/jquery.tinymce.js"></script>
+    <script type="text/javascript"
+            src="https://raw.github.com/cowboy/jquery-outside-events/v1.1/jquery.ba-outside-events.js"></script>
+    <script type="text/javascript" src="../src/jquery.jfeComposer.js"></script>
+    <script type="text/javascript" src="../src/adapters/default.js"></script>
+    <script type="text/javascript" src="../src/editors/textinput.js"></script>
+    <script type="text/javascript" src="../src/editors/textarea.js"></script>
+    <script type="text/javascript" src="../src/editors/tinymce.js"></script>
+    <script type="text/javascript" src="../src/editors/delete.js"></script>
+    <script type="text/javascript" src="../src/editors/toggle.js"></script>
+    <script type="text/javascript" src="../src/editors/upload.js"></script>
+    <script type="text/javascript" src="../src/plugins/core.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.jfeC.addCallback('Textinput', 'alertSomething', function() {
+                alert('edited!');
+                return true;
+            });
+
+            $.jfeC.init();
+        });
+    </script>
+</head>
+<body>
+<!-- jfeCSettings
+	{
+        "adapter": "default",
+        "baseURL": "/jfeComposer/demo",
+        "TinyMCE": {
+            "path": "../vendor/tinymce/jscripts/tiny_mce/tiny_mce.js",
+            "default" : {
+                "theme_advanced_toolbar_location": "bottom"
+                },
+            "special": {
+                "theme_advanced_toolbar_location": "top"
+               }
+            }
+	}
+-->
+<div class="jfeCEditable">
+<!-- jfeCData
+    [
+        {
+            "modelName": "Text",
+            "controller": "example",
+            "elementId": "headline_1",
+            "editor": "Textinput",
+            "validate": "notEmpty",
+            "defaultText": "This text appears if the headline is empty",
+            "beforeSave": "alertSomething",
+            "Textinput": {
+                "fieldName": "headline",
+                "action": "update",
+                "addData": {
+                    "id": 1
+                }
+            },
+            "postData": {
+                "foo": "bar"
+            }
+        },
+        {
+            "modelName": "Text",
+            "controller": "example",
+            "elementId": "body_2",
+            "editor": "TinyMCE",
+            "validate": "notEmpty",
+            "defaultText": "This text appears if the body is empty",
+            "TinyMCE": {
+                "fieldName": "body",
+                "settings": "special",
+                "action": "update",
+                "addData": {
+                    "id": 1
+                }
+            }
+        },
+        {
+            "modelName": "Text",
+            "controller": "example",
+            "elementId": "body_1",
+            "editor": "Textarea",
+            "validate": "notEmpty",
+            "defaultText": "This text appears if the body is empty",
+            "Textarea": {
+                "fieldName": "body",
+                "action": "update",
+                "addData": {
+                    "id": 1
+                }
+            }
+        },
+        {
+            "modelName": "Images",
+            "controller": "images",
+            "fieldName": "images",
+            "elementId": "dropZone",
+            "editor": "Upload"
+        },
+        {
+            "modelName": "Text",
+            "controller": "example",
+            "elementId": "delete",
+            "editor": "Delete",
+            "bindToElement": "delete_button",
+            "Delete": {
+                "id": 1,
+                "addData": {
+                    "id": 1
+                }
+            }
+        }
+    ]
+    -->
+    <h2 id="headline_1">Headline... click me to edit</h2>
+
+    <div id="body_1">This is the body<br/>have fun!</div>
+    <div id="body_2">WYSIWYG Editor!</div>
+    <div id="dropZone" style="width:200px;height:200px;border:1px solid #ff00ff;"></div>
+    <div id="delete">This Element is deletable.<span id="delete_button" style="margin-left:20px;">click to delete</span>
+    </div>
+</div>
+</body>
+</html>

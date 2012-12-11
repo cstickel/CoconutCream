@@ -1,0 +1,189 @@
+@import "css3.less";
+@import "hallo.css";
+
+@colorUltraLightGrey: #f0f0f0;
+@colorLightGrey: #d7d7d7;
+@colorDarkGrey: #666;
+
+#jfeComposerContextMenu {
+    margin-top:-50px;
+    display:inline-block;
+    position:absolute;
+    height:36px;
+    position: 'absolute';
+    z-index: 299999;
+    .linear-gradient(top, ~',white 30%', ~',#d7d7d7 100%');
+    background-repeat:repeat-x;
+    padding:6px 8px 0px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px #ccc;
+
+    span {
+        cursor:pointer;
+        display:inline-block;
+        width:29px;
+        height:29px;
+        background-image:url(../img/baricons.png);
+        margin:0px 8px;
+    }
+}
+
+
+.jfeComposerContextMenuButtons(@index) {
+    background-position:@index*-29px 0px;
+
+    &:hover {
+        background-position:@index*-29px -29px;
+    }
+}
+
+.jfeComposerContextMenuDelete {
+    .jfeComposerContextMenuButtons(0);
+}
+.jfeComposerContextMenuPlay {
+    .jfeComposerContextMenuButtons(1);
+}
+.jfeComposerContextMenuEdit {
+    .jfeComposerContextMenuButtons(2);
+}
+.jfeComposerContextMenuPin {
+    .jfeComposerContextMenuButtons(3);
+}
+.jfeComposerContextMenuPinActive {
+    .jfeComposerContextMenuButtons(4);
+}
+.jfeComposerContextMenuStar {
+    .jfeComposerContextMenuButtons(5);
+}
+.jfeComposerContextMenuStarActive {
+    .jfeComposerContextMenuButtons(6);
+}
+.jfeComposerContextMenuUpload {
+    .jfeComposerContextMenuButtons(7);
+}
+.jfeComposerContextMenuMovie {
+    .jfeComposerContextMenuButtons(8);
+}
+.jfeComposerContextMenuMovieActive {
+    .jfeComposerContextMenuButtons(9);
+}
+.jfeComposerContextMenuLink {
+    .jfeComposerContextMenuButtons(10);
+}
+.jfeComposerContextMenuTranslate {
+    .jfeComposerContextMenuButtons(11);
+}
+.jfeComposerContextMenuHide {
+    .jfeComposerContextMenuButtons(12);
+}
+.jfeComposerContextMenuShow {
+    .jfeComposerContextMenuButtons(13);
+}
+
+/* todo : use or remove */
+#barTest {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 20px;
+    height: 200px;
+    left: 50%;
+    margin-left: -300px;
+    position: fixed;
+    top: 0;
+    width: 600px;
+    z-index: 9000;
+    }
+
+#jfeComposerOverlay {
+    padding:20px;
+    z-index:8001;
+    background-color:#ffffff;
+    position:absolute;
+    left:50%;
+    box-shadow: 0 0 8px #ccc;
+
+    .button {
+        float:right;
+    }
+
+    .content {
+        min-width:400px;
+    }
+}
+#jfeComposerOverlayDimmer {
+    z-index:8000;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    opacity:0.7;
+    background-color:#ffffff;
+}
+#jfeComposerSelectEditor {
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    cursor:pointer;
+    width:400px;
+
+    li {
+        padding:16px;
+
+        &:hover {
+        //    background-color:@colorUltraLightGrey;
+        }
+    }
+    li:last-child {
+        margin:0px;
+        background-image:none;
+    }
+}
+#jfeComposerLinkEditor {
+    width:260px;
+
+    select, input[type=text] {
+        width:250px;
+        margin-bottom:8px;
+    }
+    span.button {
+        padding:0px;
+    }
+}
+
+span.addContentElement {
+    display:block;
+    cursor:pointer;
+    height:5px;
+    width:100%;
+    background-color:@colorUltraLightGrey;
+    position:relative;
+    z-index:100;
+
+    &:before {
+        content:"+";
+        font-weight:bold;
+        display:block;
+        overflow:hidden;
+        width:100%;
+        color:@colorDarkGrey;
+        font-size:20px;
+        line-height:35px;
+        text-align:center;
+        height: 0px;
+        box-shadow: 0 0 8px #ccc;
+        border-radius: 6px;
+        .linear-gradient(top, ~',white 30%', ~',#d7d7d7 100%');
+
+        .transition(height, 500ms, @easeOutQuint);
+
+    }
+
+    &:hover &:before {
+        height:30px;
+        .transition(height, 500ms, @easeOutQuint);
+    }
+}
+.hidden {
+    opacity: 0.5;
+}
